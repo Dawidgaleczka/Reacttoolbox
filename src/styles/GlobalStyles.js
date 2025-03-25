@@ -69,6 +69,7 @@ export const GlobalStyle = createGlobalStyle`
 
   html {
     font-size: 16px;
+    height: 100%;
     
     ${({ theme }) => theme.breakpoints.xs} {
       font-size: 14px;
@@ -86,6 +87,17 @@ export const GlobalStyle = createGlobalStyle`
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    overflow-x: hidden;
+  }
+
+  #root {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 100%;
   }
 
   h1, h2, h3, h4, h5, h6 {

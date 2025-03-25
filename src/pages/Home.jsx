@@ -4,21 +4,23 @@ import { Link } from 'react-router-dom';
 import Button from '../components/Button';
 
 const HomeContainer = styled.div`
-  max-width: 1200px;
+  width: 100%;
   margin: 0 auto;
   padding: ${({ theme }) => theme.spacing.md};
   
   ${({ theme }) => theme.breakpoints.md} {
     padding: ${({ theme }) => theme.spacing.lg};
+    max-width: 1200px;
   }
 `;
 
 const Hero = styled.div`
   text-align: center;
-  margin-bottom: ${({ theme }) => theme.spacing.xl};
+  margin: 2rem auto 3rem;
+  max-width: 800px;
   
   ${({ theme }) => theme.breakpoints.md} {
-    margin-bottom: ${({ theme }) => theme.spacing.xxl};
+    margin: 4rem auto 5rem;
   }
 `;
 
@@ -55,11 +57,15 @@ const FeatureGrid = styled.div`
   display: grid;
   grid-template-columns: 1fr;
   gap: ${({ theme }) => theme.spacing.lg};
-  margin-bottom: ${({ theme }) => theme.spacing.xl};
+  margin-bottom: 3rem;
   
-  ${({ theme }) => theme.breakpoints.md} {
+  ${({ theme }) => theme.breakpoints.sm} {
     grid-template-columns: repeat(2, 1fr);
-    margin-bottom: ${({ theme }) => theme.spacing.xxl};
+  }
+  
+  ${({ theme }) => theme.breakpoints.lg} {
+    grid-template-columns: repeat(3, 1fr);
+    margin-bottom: 5rem;
   }
 `;
 

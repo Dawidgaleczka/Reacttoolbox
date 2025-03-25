@@ -5,20 +5,22 @@ import { FaHome, FaSquare, FaWpforms, FaTools } from 'react-icons/fa';
 const SidebarContainer = styled.aside`
   background-color: ${({ theme }) => theme.colors.light};
   border-right: 1px solid #e9ecef;
-  height: calc(100vh - 60px);
+  height: 100vh;
   overflow-y: auto;
   padding: ${({ theme }) => theme.spacing.md};
   position: fixed;
-  top: 60px;
+  top: 0;
   left: ${({ isOpen }) => (isOpen ? '0' : '-250px')};
   width: 250px;
-  transition: left 0.3s ease;
-  z-index: 900;
+  transition: all 0.3s ease;
+  z-index: 1000;
   box-shadow: ${({ isOpen, theme }) => isOpen ? theme.shadows.medium : 'none'};
+  padding-top: 80px; /* Add space for the navbar */
   
   ${({ theme }) => theme.breakpoints.md} {
     left: ${({ isOpen }) => (isOpen ? '0' : '-250px')};
     box-shadow: none;
+    z-index: 900;
   }
 `;
 

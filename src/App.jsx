@@ -12,7 +12,7 @@ import { AppContainer, MainContent } from './styles/LayoutStyles';
 
 function App() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
 
   // Check if we're on mobile
   useEffect(() => {
@@ -46,21 +46,19 @@ function App() {
             sidebarOpen={sidebarOpen} 
             toggleSidebar={() => setSidebarOpen(!sidebarOpen)} 
           />
-          <div style={{ display: 'flex' }}>
-            <Sidebar 
-              isOpen={sidebarOpen} 
-              isMobile={isMobile}
-              onNavigate={handleNavigation}
-            />
-            <MainContent sidebarOpen={!isMobile && sidebarOpen}>
-              <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/buttons" element={<ButtonsPage />} />
-                <Route path="/forms" element={<FormsPage />} />
-                <Route path="/hooks" element={<HooksPage />} />
-              </Routes>
-            </MainContent>
-          </div>
+          <Sidebar 
+            isOpen={sidebarOpen} 
+            isMobile={isMobile}
+            onNavigate={handleNavigation}
+          />
+          <MainContent sidebarOpen={!isMobile && sidebarOpen}>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/buttons" element={<ButtonsPage />} />
+              <Route path="/forms" element={<FormsPage />} />
+              <Route path="/hooks" element={<HooksPage />} />
+            </Routes>
+          </MainContent>
         </AppContainer>
       </Router>
     </ThemeProvider>

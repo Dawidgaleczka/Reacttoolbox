@@ -13,6 +13,7 @@ const NavbarContainer = styled.nav`
   position: sticky;
   top: 0;
   z-index: 1000;
+  width: 100%;
   
   ${({ theme }) => theme.breakpoints.md} {
     padding: ${({ theme }) => theme.spacing.md} ${({ theme }) => theme.spacing.lg};

@@ -10,6 +10,9 @@ export const MainContent = styled.main`
   flex: 1;
   padding: ${({ theme }) => theme.spacing.md};
   transition: margin-left 0.3s ease;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
   
   ${({ theme }) => theme.breakpoints.md} {
     padding: ${({ theme }) => theme.spacing.lg};
